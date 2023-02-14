@@ -4,7 +4,7 @@ import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { AntDesignVueResolver } from "unplugin-vue-components/resolvers";
 import { viteMockServe } from "vite-plugin-mock";
-const path = require("path");
+// import legacy from "@vitejs/plugin-legacy";
 // const resolve = str => path.resolve(__dirname, str);
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -15,17 +15,20 @@ export default defineConfig(({ mode }) => {
     plugins: [
       vue(),
       viteMockServe({
-        mockPath:"./mock/index",
-        supportTs: false //如果使用 js发开，则需要配置 supportTs 为 false
+        mockPath: "./mock/index",
+        supportTs: false, //如果使用 js发开，则需要配置 supportTs 为 false
       }),
       AutoImport({
-        resolvers: [AntDesignVueResolver()]
+        resolvers: [AntDesignVueResolver()],
       }),
       Components({
-        resolvers: [AntDesignVueResolver()]
-      })
+        resolvers: [AntDesignVueResolver()],
+      }),
+      // legacy({
+      //   targets: ["defaults", "not IE 11"],
+      // }),
     ],
-    base: "./",
+    base: "/",
     server: {
       port: 3005,
       // proxy: {
@@ -53,12 +56,12 @@ export default defineConfig(({ mode }) => {
       // chunk 大小警告的限制
       chunkSizeWarningLimit: 700,
       // 生产环境移除 console
-      minify: "terser",
+      minify: "terser", //"esbuild",
       terserOptions: {
         compress: {
           drop_console: !IS_DEV,
-          drop_debugger: !IS_DEV
-        }
+          drop_debugger: !IS_DEV,
+        },
       },
       rollupOptions: {
         output: {
@@ -66,8 +69,11 @@ export default defineConfig(({ mode }) => {
           // manualChunks: {
           //   vlib: ["vue", "vue-router", "vuex"]
           // }
-        }
-      }
-    }
+        },
+      },
+    },
+    // esbuild: {
+    //   drop: IS_DEV ? [] : ["console", "debugger"],
+    // },
   };
 });

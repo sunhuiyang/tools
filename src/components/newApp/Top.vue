@@ -1,32 +1,19 @@
 <template>
-  <a-select  show-search placeholder="请选择规格" style="width: 200px" :options="zhenfa"
-    :filter-option="filterOption" @focus="handleFocus" @blur="handleBlur" @change="handleChange"></a-select>
+  <a-select show-search placeholder="请选择规格" style="width: 200px" :options="zhenfas" v-model:value="defaultV"
+    :filter-option="filterOption" @change="handleChange"></a-select>
 </template>
 <script setup>
 // import { ref, toRefs } from "vue";
-import { useZhenfa } from "../../hook/base"
+import { useZhenfa } from "../../hook/useSelectType"
 
 
 const emits = defineEmits(["confirmCb"]);
+//给个第一次的默认值触发改变选择回调
 const defaultFunc = (defaultV) => {
   emits("confirmCb", defaultV)
 }
-const [zhenfa] = useZhenfa(defaultFunc)
-//使用父组件传递过来的值
-// emits("confirmCb", zhenfa.value[0]);
-const handleChange = (value, s) => {
-  emits("confirmCb", s);
-};
+const { zhenfas, defaultV, handleChange, filterOption } = useZhenfa(defaultFunc, emits)
 
-const handleBlur = () => {
-};
-
-const handleFocus = () => {
-};
-
-const filterOption = (input, option) => {
-  return option.value.toLowerCase().indexOf(input.toLowerCase()) >= 0;
-};
 </script>
 <style scoped>
 .zhenfaimg {

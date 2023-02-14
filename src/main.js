@@ -7,7 +7,7 @@ import { plugin } from "./directive/index"; //引入自定义插件
 const app = createApp(App);
 
 import { getUniSdk, getWxSdk } from "./utils/sdk";
-getWxSdk();
+// getWxSdk();
 app.use(router);
 app.use(store);
 app.use(plugin);

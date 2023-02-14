@@ -5639,3 +5639,150 @@ export var combinations = [
     activatePropertyVal: "4.00",
   },
 ];
+export const initMap = [
+  {
+    key: "气血",
+    value: 0,
+    fixed: 0,
+  },
+  {
+    key: "真气",
+    value: 0,
+    fixed: 0,
+  },
+  {
+    key: "攻击",
+    value: 0,
+    fixed: 0,
+  },
+  {
+    key: "防御",
+    value: 0,
+    fixed: 0,
+  },
+  {
+    key: "命中",
+    value: 0,
+    fixed: 0,
+  },
+  {
+    key: "躲闪",
+    value: 0,
+    fixed: 0,
+  },
+  {
+    key: "暴击率",
+    value: 0,
+    fixed: 2,
+  },
+  {
+    key: "暴击伤害",
+    value: 0,
+    fixed: 2,
+  },
+  {
+    key: "眩晕抗性",
+    value: 0,
+    fixed: 0,
+  },
+  {
+    key: "虚弱抗性",
+    value: 0,
+    fixed: 0,
+  },
+  {
+    key: "定身抗性",
+    value: 0,
+    fixed: 0,
+  },
+  {
+    key: "魅惑抗性",
+    value: 0,
+    fixed: 0,
+  },
+  {
+    key: "昏睡抗性",
+    value: 0,
+    fixed: 0,
+  },
+  {
+    key: "减免伤害",
+    value: 0,
+    fixed: 2,
+  },
+  {
+    key: "附加伤害",
+    value: 0,
+    fixed: 0,
+  },
+  {
+    key: "减免普攻伤害",
+    value: 0,
+    fixed: 0,
+  },
+  {
+    key: "被致命一击的概率减少",
+    value: 0,
+    fixed: 2,
+  },
+  {
+    key: "受到致命一击伤害减少",
+    value: 0,
+    fixed: 2,
+  },
+  {
+    key: "增加技能躲闪",
+    value: 0,
+    fixed: 2,
+  },
+  {
+    key: "增加技能命中",
+    value: 0,
+    fixed: 2,
+  },
+  {
+    key: "御仙",
+    value: 0,
+    fixed: 2,
+  },
+  {
+    key: "御魔",
+    value: 0,
+    fixed: 2,
+  },
+  {
+    key: "御佛",
+    value: 0,
+    fixed: 2,
+  },
+  {
+    key: "无视人物伤害减免百分比",
+    value: 0,
+    fixed: 2,
+  },
+  {
+    key: "对仙阵营伤害增加百分比",
+    value: 0,
+    fixed: 2,
+  },
+  {
+    key: "对魔阵营伤害增加百分比",
+    value: 0,
+    fixed: 2,
+  },
+  {
+    key: "对佛阵营伤害增加百分比",
+    value: 0,
+    fixed: 2,
+  },
+  {
+    key: "获得修为",
+    value: 0,
+    fixed: 2,
+  },
+  {
+    key: "元力",
+    value: 0,
+    fixed: 0,
+  },
+];

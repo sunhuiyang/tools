@@ -34,7 +34,7 @@ export default {
       let scrollTop = listWrap.value.scrollTop;
       console.log("滚动高度", scrollTop);
       //开始的数组索引ew67[]\[kgcxz]
-      start.value = Math.floor(scro llTop / itemHeight.value);
+      start.value = Math.floor(scrollTop / itemHeight.value);
       //结束索引
       end.value = start.value + showNum.value;
       console.log(start.value, end.value);
