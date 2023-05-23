@@ -21,7 +21,7 @@ import { Modal, } from "ant-design-vue"
 import api from "../api/bus"
 import to from "await-to-js"
 import { symbol } from 'vue-types';
-console.log("merge newfeature");
+console.log("test new feature");
 const co = ref("red")
 const router = useRouter();
 const iframes = ref(null)
