@@ -1,7 +1,9 @@
 <template>
-  <city-pikcer v-model="state.va" @cb="cb"> </city-pikcer>
-  <div>{{ address }}</div>
-  <div>&nbsp;</div>
+  <city-pikcer v-model="state.va" @cb="cb">
+    <template v-slot:hhs>
+      <div>{{ address }}</div>
+    </template>
+  </city-pikcer>
 </template>
 
 <script setup>

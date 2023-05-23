@@ -40,8 +40,8 @@ import ShowCard from "../../components/newApp/ShowCard.vue";
 import { reactive, ref, } from "vue";
 import { deepClone } from "../../utils/util";
 import { initMap } from "../../api/data";
-import { useAddCardBox } from "../../hook/useAddCardBox";
-import { useSelectCard } from "../../hook/useSelectCard"
+import { useAddCardBox } from "../../hook/useAddCardBox.js";
+import { useSelectCard } from "../../hook/useSelectCard.js"
 // import { useMousePosition } from "../../hook/mouse"
 // const [left, right] = useMousePosition()
 //其他hook可能会用到的变量放在外面公用

@@ -125,7 +125,9 @@ export default defineComponent({
     },
     login(username, password) {
       this.req("login", { username, password })
-        .then(res => {})
+        .then(res => {
+          console.log("login",res);
+        })
         .catch(err => {
           console.log("err", err);
         });

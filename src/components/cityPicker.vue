@@ -16,7 +16,7 @@
   <div @click="clic">--{{ modelValue }}</div>
 </template>
 <script setup>
-import { ref, defineProps } from "vue";
+import { ref } from "vue";
 import { cityList } from "../utils/cityList";
 const emits = defineEmits(["cb","update:modelValue"]);
 defineProps({

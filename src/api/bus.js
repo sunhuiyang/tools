@@ -24,6 +24,10 @@ export default {
     const res = await commonReq("/account/reg", params);
     return res;
   },
+  async getStu(params) {
+    const res = await commonReq("/heroes/get", params);
+    return res;
+  },
   async available(params) {
     const res = await commonReq("/account/nameIsUse", params);
     return res;

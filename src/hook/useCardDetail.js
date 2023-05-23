@@ -21,8 +21,12 @@ export const useCardDetail = (props) => {
   ];
   const { detail } = toRefs(props);
   let combine = ref([]);
-  watchEffect(async () => {
+  watchEffect(async (onInvalidate) => {
     //可以立即执行一次，请求初始数据
+    console.log("watcheffect");
+    onInvalidate(()=>{
+      console.log("watcheffect invalidate");
+    })
     combine.value = await useCombine(detail.value.name);
   });
   const handleCalc = (lv, arr) => {

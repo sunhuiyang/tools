@@ -16,6 +16,12 @@ const routes = [
     component: () => import("../views/Home.vue"),
   },
   {
+    path: "/event",
+    name: "e",
+    // component: () => import("../views/newApp/Index.vue")
+    component: () => import("../views/event.vue"),
+  },
+  {
     path: "/zhenling",
     name: "zhenling",
     component: () => import("../views/newApp/Index.vue"),
@@ -24,6 +30,11 @@ const routes = [
     path: "/a",
     name: "aa",
     component: () => import("../views/study.vue"),
+  },
+  {
+    path: "/qiankun",
+    name: "qiankun",
+    component: () => import("../views/QK.vue"),
   },
   // {
   //   path: "/reg",

@@ -4,7 +4,7 @@ export default createStore({
   state: {
     nav: "",
     submenu: "",
-    menu: ""
+    menu: "",
   },
   mutations: {
     setNav: (state, data) => {

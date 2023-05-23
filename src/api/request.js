@@ -22,6 +22,7 @@ export default {
       });
   },
   post(url, params) {
+    console.log("--",params);
     // if(url.include("login")||url.include("reg"))
     // if (url.includes("/file")) {
     return axios
