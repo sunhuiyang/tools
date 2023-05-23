@@ -127,9 +127,7 @@ onMounted(() => {
   })
 })
 //set
-const ob = { name: 'sjy', file: "bfi" }
-const { name: myname, file: myfile } = ob
-console.log(myname, myfile);
+
 </script>
 
 <style scoped>
