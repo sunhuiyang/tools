@@ -4,6 +4,8 @@
   </div>
   <div v-once @click="change">{{ count }}</div>
   <div @click="reset">{{ str }}</div>
+  <button v-has="'admin'">管理员按钮</button>
+  <button v-has="'normal'">普通用户按钮</button>
 </template>
 
 <script setup>

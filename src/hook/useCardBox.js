@@ -63,24 +63,12 @@ export const useCards = function (props, emits) {
   onMounted(() => {
     loadData();
   });
-  const key = computed(
-    {
-      get: () => props.activeKey,
-      set: (val) => {
-        emits("changeKey", val);
-      },
+  const key = computed({
+    get: () => props.activeKey,
+    set: (val) => {
+      emits("changeKey", val);
     },
-    {
-      onTrack(e) {
-        console.log("onTrack", e);
-        debugger;
-      },
-      onTrigger(e) {
-        console.log("onTrigger", e);
-        debugger;
-      },
-    }
-  );
+  });
   //watch
   const xzdjCalc = (lv, condition, isGJ) => {
     let con = parseFloat(condition);

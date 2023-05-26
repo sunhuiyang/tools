@@ -1,7 +1,7 @@
 <template>
   <ul>
     <li>1<a-button type="primary" @click="toZhenling('zhenling')">测试App</a-button></li>
-    <li>2<a-button type="primary" @click="test">学习</a-button></li>
+    <li>2<a-button type="primary" @click="toZhenling('three')">Three</a-button></li>
     <li>3<a-button type="primary" @click="toZhenling('qiankun')">微前端框架</a-button></li>
     <!-- <iframe width="100%" height="70%" ref="iframes" id="iframes" src="http://localhost:8080/#/login"
       frameborder="0"></iframe> -->
@@ -106,6 +106,12 @@ const test = async (params) => {
   // window.open("http://localhost:8080/#/slide")
 }
 onMounted(() => {
+  window.addEventListener("beforeunload", e => {
+    console.log("unload");
+    e = e || window.envent;
+    if (e) e.returnValue = "关闭？"
+    return "关闭"
+  })
   // console.log("onMounted=====", window.frames[0].parent === window)
   // let child = iframes.value.contentWindowDocument;
   // iframes.value.onload = () => {

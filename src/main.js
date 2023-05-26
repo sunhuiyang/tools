@@ -1,6 +1,6 @@
 import { createApp, markRaw } from "vue";
 import App from "./App.vue";
-import router from "./router";
+import {router} from "./router";
 import "ant-design-vue/es/message/style/css";
 import store from "./store";
 import { plugin } from "./directive/index"; //引入自定义插件
