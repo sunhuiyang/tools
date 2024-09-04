@@ -61,7 +61,7 @@ export default defineConfig(({ mode }) => {
     },
     build: {
       // 打包构建输出路径
-      outDir: "dist",
+      outDir: "zxtool",
       // 生成静态资源的存放路径
       assetsDir: "static",
       // 构建后是否生成 source map 文件
@@ -76,6 +76,7 @@ export default defineConfig(({ mode }) => {
           drop_debugger: !IS_DEV,
         },
       },
+      sourcemap: false,
       rollupOptions: {
         output: {
           // https://rollupjs.org/guide/en/#outputmanualchunks
