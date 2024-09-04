@@ -7,15 +7,26 @@ import HelloWorld from './components/HelloWorld.vue'
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
   <!-- <HelloWorld msg="Hello Vue 3 + Vite" /> -->
-  <router-view></router-view>
+  <!-- <Transition>
+    <Suspense> -->
+      <router-view></router-view>
+    <!-- </Suspense>
+  </Transition> -->
 </template>
 
 <style>
-#app {
+/* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+} */
+
+:root {
+  --headColor: hsl(130, 75%, 75%);
+  --endColor: hsl(60, 75%, 40%);
+  --w: -200px;
+  --bgc: #f0f0f0
 }
 </style>

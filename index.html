@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <!-- <script type="text/javascript">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>vite App</title>
+  <!-- <script type="text/javascript">
       var userAgent = navigator.userAgent;
       if (userAgent.indexOf("AlipayClient") > -1) {
         // 支付宝小程序的 JS-SDK 防止 404 需要动态加载，如果不需要兼容支付宝小程序，则无需引用此 JS 文件。
@@ -46,22 +47,26 @@
         );
       }
     </script> -->
-    <!-- uni 的 SDK -->
-    <!-- 需要把 uni.webview.1.5.3.js 下载到自己的服务器 -->
-    <!-- <script
+  <!-- uni 的 SDK -->
+  <!-- 需要把 uni.webview.1.5.3.js 下载到自己的服务器 -->
+  <!-- <script
       type="text/javascript"
       src="https://unpkg.com/@dcloudio/uni-webview-js@0.0.2/index.js"
     ></script> -->
-    <script>
+  <script>
       // document.addEventListener("UniAppJSBridgeReady", function () {
       //   uni.getEnv(function (res) {
       //     console.log("当前环境：" + JSON.stringify(res));
       //   });
       // });
-    </script>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+  </script>
+</head>
+
+<body>
+  <!-- <header><%= logo %></header> -->
+  <div id="app">
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>

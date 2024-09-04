@@ -4,13 +4,18 @@ import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { AntDesignVueResolver } from "unplugin-vue-components/resolvers";
 import { viteMockServe } from "vite-plugin-mock";
+import { createHtmlPlugin } from "vite-plugin-html";
 // import legacy from "@vitejs/plugin-legacy";
 // const resolve = str => path.resolve(__dirname, str);
 // https://vitejs.dev/config/
+const getViteEnv = (mode, target) => {
+  return loadEnv(mode, process.cwd())[target];
+};
 export default defineConfig(({ mode }) => {
   const ENV = loadEnv(mode, __dirname);
   const IS_DEV = ENV.VITE_APP_ENV !== "production";
-  console.log("config=>", mode, "env=>", ENV);
+  console.log("config=>", mode, "env=>", __dirname);
+  console.log("cwd==>", process.cwd());
   return {
     plugins: [
       vue(),
@@ -23,6 +28,14 @@ export default defineConfig(({ mode }) => {
       }),
       Components({
         resolvers: [AntDesignVueResolver()],
+      }),
+      createHtmlPlugin({//固定显示
+        inject: {
+          data: {
+            title: getViteEnv(mode, "VITE_APP_HEADER"),
+            logo: getViteEnv(mode, "VITE_APP_ENV"),
+          },
+        },
       }),
       // legacy({
       //   targets: ["defaults", "not IE 11"],
@@ -42,9 +55,9 @@ export default defineConfig(({ mode }) => {
           ws: true,
           changeOrigin: true,
           // 拦截到的请求路径 testaxios/httphwm/getList，/testaxios会被替换成空
-          rewrite: path => path.replace(/^\/api/, "")
-        }
-      }
+          rewrite: (path) => path.replace(/^\/api/, ""),
+        },
+      },
     },
     build: {
       // 打包构建输出路径
