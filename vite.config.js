@@ -41,7 +41,7 @@ export default defineConfig(({ mode }) => {
       //   targets: ["defaults", "not IE 11"],
       // }),
     ],
-    base: "/",
+    base: IS_DEV ? '/' : '/dist/',
     server: {
       port: 3005,
       proxy: {
@@ -61,11 +61,11 @@ export default defineConfig(({ mode }) => {
     },
     build: {
       // 打包构建输出路径
-      outDir: "zxtool",
+      outDir: "dist",
       // 生成静态资源的存放路径
       assetsDir: "static",
       // 构建后是否生成 source map 文件
-      sourcemap: true,
+      sourcemap: false,
       // chunk 大小警告的限制
       chunkSizeWarningLimit: 700,
       // 生产环境移除 console
@@ -76,7 +76,6 @@ export default defineConfig(({ mode }) => {
           drop_debugger: !IS_DEV,
         },
       },
-      sourcemap: false,
       rollupOptions: {
         output: {
           // https://rollupjs.org/guide/en/#outputmanualchunks

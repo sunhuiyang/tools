@@ -23,7 +23,7 @@ export const useAddCardBox = ({ selectCardBox, selectFabaoBox, state }) => {
     //添加卡槽
     const cardbox = document.createElement("div");
     cardbox.className = "card-box";
-    cardbox.style.backgroundImage = `url("/image/card_add.png")`;
+    cardbox.style.backgroundImage = import.meta.env.DEV? `url("/image/card_add.png")` : `url("/dist/image/card_add.png")` ;
     cardbox.style.top = top + "px";
     cardbox.style.left = parseInt(left) - 10 + "px";
     state.cardBox.push({ index, target: cardbox});
@@ -52,7 +52,7 @@ export const useAddCardBox = ({ selectCardBox, selectFabaoBox, state }) => {
     //添加删除图标
     const deletcIcon = document.createElement("div");
     deletcIcon.className = "delete-icon";
-    deletcIcon.style.backgroundImage = `url("/image/delete.png")`;
+    deletcIcon.style.backgroundImage = import.meta.env.DEV?`url("/image/delete.png")`:`url("/dist/image/delete.png")`;
     deletcIcon.style.top = top - 12 + "px";
     deletcIcon.style.left = parseInt(left) + 84 + "px";
     deletcIcon.addEventListener("click", (e) => {
@@ -60,7 +60,7 @@ export const useAddCardBox = ({ selectCardBox, selectFabaoBox, state }) => {
       if (!state.cardBox[index].name) return; //没有卡牌时点击不做任何反应
       state.cardBox[
         index
-      ].target.style.backgroundImage = `url("/image/card_add.png")`;
+      ].target.style.backgroundImage =import.meta.env.DEV? `url("/image/card_add.png")`:`url("/dist/image/card_add.png")`;
       //删除卡牌
       state.cardBox[index].name = "";
       state.cardBox[index].cardDetail = "";
@@ -74,7 +74,7 @@ export const useAddCardBox = ({ selectCardBox, selectFabaoBox, state }) => {
     //FB卡槽
     const fbBox = document.createElement("div");
     fbBox.className = "fabao-box";
-    fbBox.style.backgroundImage = `url("/image/fb_add.png")`;
+    fbBox.style.backgroundImage =import.meta.env.DEV? `url("/image/fb_add.png")`:`url("/dist/image/fb_add.png")`;
     fbBox.style.top = parseInt(top) + 120 + "px";
     fbBox.style.left = parseInt(left) + 101 + "px";
     leftBox.value.appendChild(fbBox);
@@ -103,7 +103,7 @@ export const useAddCardBox = ({ selectCardBox, selectFabaoBox, state }) => {
     //法宝卡槽删除图标
     const fbdeletcIcon = document.createElement("div");
     fbdeletcIcon.className = "delete-icon";
-    fbdeletcIcon.style.backgroundImage = `url("/image/delete.png")`;
+    fbdeletcIcon.style.backgroundImage =import.meta.env.DEV? `url("/image/delete.png")`:`url("/dist/image/delete.png")`;
     fbdeletcIcon.style.top = parseInt(top) + 106 + "px";
     fbdeletcIcon.style.left = parseInt(left) + 106 + "px";
     fbdeletcIcon.addEventListener("click", (e) => {
@@ -111,7 +111,7 @@ export const useAddCardBox = ({ selectCardBox, selectFabaoBox, state }) => {
       if (!state.cardBox[index].fabao || !state.cardBox[index].fabao.name)
         return;
       //删除图标，删除保存的法宝属性，然后重新计算
-      state.cardBox[index].fabaoTarget.style.backgroundImage = `url("/image/fb_add.png")`;
+      state.cardBox[index].fabaoTarget.style.backgroundImage = import.meta.env.DEV?`url("/image/fb_add.png")`:`url("/dist/image/fb_add.png")`;
       state.cardBox[index].fabao = {};
       calc();
     });
